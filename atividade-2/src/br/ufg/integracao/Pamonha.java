@@ -2,7 +2,7 @@ package br.ufg.integracao;
 
 import java.io.Serializable;
 
-public class Pamonha {
+public class Pamonha implements Serializable{
     private String sabor;
 
     protected Pamonha(String sabor) {
