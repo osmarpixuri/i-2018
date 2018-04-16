@@ -6,16 +6,13 @@ import java.io.*;
 
 public class Serializacao {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Pamonha pamonha = new Pamonha("doce");
 
-        try {
-            ObjectOutputStream accData = new ObjectOutputStream(new FileOutputStream("pamonha.bin"));
-            accData.writeObject(pamonha);
-            accData.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        pamonha.serializar("pamonha.bin");
 
+        Pamonha pamonha2 = pamonha.desserealizar("pamonha.bin");
+
+        System.out.println(pamonha2.getSabor());
     }
 }
